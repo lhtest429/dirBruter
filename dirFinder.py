@@ -97,7 +97,7 @@ def getScan(url,num):
         print "scanning " + url
         #print status
         #print url
-        if status == 200 and content.find('No such Host'<=-1) and content.find('ok')<=-1 and len(content)>20 and len(content) != num:
+        if status == 200 and content.find('No such Host')<=-1 and content.find('ok')<=-1 and len(content)>20 and len(content) != num:
             f = open('vulurl.txt','a')
             f.write(url.strip()+":"+str(len(content))+'\n')
             f.close()
