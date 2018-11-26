@@ -51,16 +51,16 @@ def check(f):
         #dir = ['/admin','/t/344205']
         dir = open("smallrule.txt")
         dirline = dir.readlines()
+        testurl = 'http://'+u+'/happytoseeyou13122213.html'
+        try:
+            requests.packages.urllib3.disable_warnings()
+            resp = requests.get(testurl,allow_redirects=False,timeout=3,verify=False)
+            num = len(resp.content)
+        except Exception as e:
+            num = 0
         for d in dirline:
             d = d.rstrip()
             scheme = ['http://','https://']
-            testurl = 'http://'+u+'/happytoseeyou13122213.html'
-            try:
-                requests.packages.urllib3.disable_warnings()
-                resp = requests.get(testurl,allow_redirects=False,timeout=3,verify=False)
-                num = len(resp.content)
-            except Exception as e:
-                num = 0
             for s in scheme:
                 #print type(s)
                 #print type(geturl)
